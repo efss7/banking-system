@@ -1,2 +1,8 @@
+### //create
+POST http://localhost:3003/users/signup
+Content-Type: application/json
 
-
+{
+    "username": "Plow",
+    "password": "Aloaloaloa1"
+}
