@@ -1,8 +1,19 @@
-### //create
+//signup
 POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "username": "Plow",
-    "password": "Aloaloaloa1"
+    "username": "aaaaa",
+    "password": "EricFelipe7"
+}
+
+###
+
+//login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "username": "uuidteste",
+    "password": "EricFelipe7"
 }
