@@ -3,7 +3,7 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "username": "aaaaa",
+    "username": "Joao",
     "password": "EricFelipe7"
 }
 
@@ -14,6 +14,10 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-    "username": "uuidteste",
+    "username": "Joao",
     "password": "EricFelipe7"
 }
+
+###
+GET http://localhost:3003/account/balance
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiJjMGNiMjY2Ni0wZGU5LTRmNzgtOGE5MS0yMGE3YTQyYjUwMjMiLCJpYXQiOjE2Njg4MTkzMTEsImV4cCI6MTY2ODkwNTcxMX0.u5-GvSQD7nQxcZs3nkc3gZ4K4NRiVYtkGWPFLjZVP68

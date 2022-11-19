@@ -17,4 +17,16 @@ export class AccountData {
             throw new CustomError(500, error.sqlMessage)
         }
     }
+    findByAccountId = async(id: string)=>{
+        try {
+            const account = await BaseDatabase.account.findUnique({
+                where:{
+                    id
+                }
+            })
+            return account
+        } catch (error) {
+            
+        }
+    }
 }

@@ -12,14 +12,14 @@ export class UserController {
             const { username, password } = req.body
             const fields: userDto = { username, password }
             const token = await this.userBusiness.signUp(fields)
-            res.status(201).send({message:"User registered successfully!", token})
+            res.status(201).send({ message: "User registered successfully!", token })
         } catch (error: any) {
             res.status(error.statusCode || 400).send({ error: error.message })
         }
     }
-    public login = async (req:Request, res:Response)=>{
+    public login = async (req: Request, res: Response) => {
         try {
-            const {username, password} =req.body
+            const { username, password } = req.body
             const fields: userDto = { username, password }
             const token = await this.userBusiness.login(fields)
             res.status(200).send({ message: "Successful login!", token })

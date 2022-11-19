@@ -29,7 +29,7 @@ export class UserBusiness {
                 throw new CustomError(422, `Username ${username} already exists`)
             }
 
-            const validatePassword = Validator.isPasswordValid(password)
+            Validator.isPasswordValid(password)
 
             const hashedPassword = bcryptjs.hashSync(password, 12)
 
@@ -43,7 +43,7 @@ export class UserBusiness {
             const user = new User(userId, username, hashedPassword, accountId)
             await this.userData.createUser(user)
             
-            return this.generateToken(userId, username)
+            return this.generateToken(accountId)
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
@@ -63,15 +63,15 @@ export class UserBusiness {
             if (!validate) {
                 throw new CustomError(401, "Login Invalid")
             }
-            return this.generateToken(userDB.id, userDB.username)
+            return this.generateToken(userDB.accountId)
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
         }
     }
-    generateToken(userId: string, username: string) {
+    generateToken( accountId:string) {
         return this.authenticator.generate({
-            userId,
-            username
+            accountId
+            
         });
     }
 }
