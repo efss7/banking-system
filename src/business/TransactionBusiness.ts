@@ -32,7 +32,7 @@ export class TransactionBusiness {
             const { accountId } = tokenData
 
             const id = uuid()
-            const createAt = new Date(Date.now())
+            const createAt = new Date()
 
             if (accountId === userDB.accountId) {
                 throw new CustomError(409, "the destination account has to be different from yours")
@@ -63,8 +63,11 @@ export class TransactionBusiness {
             const { accountId } = tokenData
 
             const transactionDB = await this.transactionData.findByAccountCredited(accountId)
-            if(!transactionDB){
+            if (!transactionDB) {
                 throw new CustomError(422, "Invalid token")
+            }
+            if (transactionDB.length === 0) {
+                throw new CustomError(422, "Sorry, you have no transactions yet")
             }
             return transactionDB
         } catch (error) {
@@ -84,6 +87,35 @@ export class TransactionBusiness {
                 throw new CustomError(422, "Sorry, you have no transactions yet")
             }
             return transactionDB
+        } catch (error) {
+            throw new CustomError(error.statusCode, error.message);
+        }
+    }
+    viewByDate = async (token: string, date: string) => {
+        try {
+            if (!date || typeof date !== "string") {
+                throw new CustomError(422, "Invalid Date")
+            }
+            const tokenData = this.authenticator.getTokenData(token)
+            const { accountId } = tokenData
+
+            let transactionDB = (await this.transactionData.findByTransactions(accountId, accountId))
+
+            const newTransaction = transactionDB.map(transaction => {
+                let newDate = {
+                    ...transaction, createdAt: transaction.createdAt.toLocaleDateString()
+                }
+                const day = newDate.createdAt.split("/")[1]
+                const mount = newDate.createdAt.split("/")[0]
+                const year = newDate.createdAt.split("/")[2]
+                newDate.createdAt = `${day}/${mount}/${year}`
+
+                return newDate
+            }).filter(transaction => transaction.createdAt === date)
+            if (newTransaction.length === 0) {
+                throw new CustomError(404, "No transactions found on the given day")
+            }
+            return newTransaction
         } catch (error) {
             throw new CustomError(error.statusCode, error.message);
         }

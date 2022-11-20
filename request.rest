@@ -3,7 +3,7 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "username": "Felipe",
+    "username": "efss7",
     "password": "Teste123"
 }
 
@@ -14,30 +14,38 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-    "username": "teste2",
+    "username": "Eric",
     "password": "Teste123"
 }
 
 ###
 //viewBalance
 GET http://localhost:3003/account/balance
-Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIwODVmMGI5My1hZjE1LTQ5ZTgtYWIwNC0yZTlmZGVjYzJmYjIiLCJpYXQiOjE2Njg4NzE3NTMsImV4cCI6MTY2ODk1ODE1M30.B84hbOglcW_1JwjCATpr3LhmifjCLlYmMGdtvuqNpvw
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
 ###
 //transfer
 POST http://localhost:3003/transaction/transfer
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIxNGExZDZkZS04YmEzLTRmMmYtYjczYS02MDM2MDM0MjI4YmEiLCJpYXQiOjE2Njg5MDEyODQsImV4cCI6MTY2ODk4NzY4NH0._sA8V4z9WtY1iu5xqoHInkssF0w9q6nbHRFXcOAU9WY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
 Content-Type: application/json
 
 {
-    "username": "teste2",
+    "username": "Adeir",
     "value": 1
 }
 ###
 //viewCashIn
 GET http://localhost:3003/transaction/cashIn
-Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzcwM2VkNC00NGEyLTQzOTMtYTU5ZC0yZjM1YjA4ODFlNmQiLCJpYXQiOjE2Njg5MDE5NDYsImV4cCI6MTY2ODk4ODM0Nn0.eCm5Ks7k6rxPFh66EEE3zd3LxuMLrXqeVP207B3ij7c
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
 ###
 //viewCashOut
 GET http://localhost:3003/transaction/cashOut
-Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzcwM2VkNC00NGEyLTQzOTMtYTU5ZC0yZjM1YjA4ODFlNmQiLCJpYXQiOjE2Njg5MDE5NDYsImV4cCI6MTY2ODk4ODM0Nn0.eCm5Ks7k6rxPFh66EEE3zd3LxuMLrXqeVP207B3ij7c
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
+###
+//viewByDate
+POST  http://localhost:3003/transaction/byDate
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIyMmMzYzEwYi04ZmZjLTRmNDctODdiYS04NDFmNWNkMjVjM2IiLCJpYXQiOjE2Njg5Njg5MTEsImV4cCI6MTY2OTA1NTMxMX0.-NjL7qsk7NDUMVFzTRMDlfCVPhTXuVQDVMJ0C5zxxpY
+Content-Type: application/json
+
+{
+    "date": "19/11/2022"
+}

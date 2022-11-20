@@ -1,13 +1,13 @@
 import * as bcryptjs from "bcryptjs";
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 import { AccountData } from "../data/AccountData";
 import { UserData } from "../data/UserData";
 import { Account } from "../model/AccountModel";
 import { userDto } from "../model/dto/UserDto";
 import { User } from "../model/UserModel";
 import { Authenticator } from "../services/Authenticator";
-import { Validator } from "../utils/Validator";
 import { CustomError } from "./errors/CustomError";
+import { Validator } from "./utils/Validator";
 
 
 export class UserBusiness {
@@ -42,7 +42,7 @@ export class UserBusiness {
 
             const user = new User(userId, username, hashedPassword, accountId)
             await this.userData.createUser(user)
-            
+
             return this.generateToken(accountId)
         } catch (error: any) {
             throw new CustomError(error.statusCode, error.message)
@@ -68,10 +68,9 @@ export class UserBusiness {
             throw new CustomError(error.statusCode, error.message)
         }
     }
-    generateToken( accountId:string) {
+    generateToken(accountId: string) {
         return this.authenticator.generate({
             accountId
-            
         });
     }
 }

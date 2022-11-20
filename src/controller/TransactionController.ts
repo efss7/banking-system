@@ -11,6 +11,7 @@ export class TransactionController {
         try {
             const token = req.headers.authorization
             const { username, value } = req.body
+            console.log(req.body)
             const fields: transactionDto = { username, value }
             await this.transactionBusiness.transfer(token, fields)
             res.status(200).send("successful transfer!")
@@ -32,6 +33,16 @@ export class TransactionController {
         try {
             const token = req.headers.authorization
             const transaction = await this.transactionBusiness.viewCashOut(token)
+            res.status(200).send(transaction)
+        } catch (error) {
+            res.status(error.statusCode || 400).send({ error: error.message })
+        }
+    }
+    public viewByDate = async (req: Request, res: Response) => {
+        try {
+            const token = req.headers.authorization
+            const date = req.body.date
+            const transaction = await this.transactionBusiness.viewByDate(token, date)
             res.status(200).send(transaction)
         } catch (error) {
             res.status(error.statusCode || 400).send({ error: error.message })

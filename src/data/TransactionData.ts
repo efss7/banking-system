@@ -42,4 +42,26 @@ export class TransactionData {
             throw new CustomError(500, error.sqlMessage)
         }
     }
+    findByTransactions = async (debitedAccountId: string, creditedAccountId: string) => {
+        try {
+            const transaction = await BaseDatabase.transaction.findMany({
+                where: {
+                    OR: [
+                        {
+                            debitedAccountId
+                        },
+                        {
+                            AND: {
+                                creditedAccountId
+                            }
+                        }
+
+                    ]
+                },
+            })
+            return transaction
+        } catch (error) {
+            throw new CustomError(500, error.sqlMessage)
+        }
+    }
 }
