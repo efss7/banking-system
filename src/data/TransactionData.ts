@@ -1,11 +1,12 @@
+import { CustomError } from "../business/errors/CustomError";
 import { Transaction } from "../model/TransactionModel";
 import { BaseDatabase } from "./BaseDatabase";
 
-export class TransactionData{
-    createTransaction = async (field:Transaction): Promise<void> =>{
+export class TransactionData {
+    createTransaction = async (field: Transaction): Promise<void> => {
         try {
             await BaseDatabase.transaction.create({
-                data:{
+                data: {
                     id: field.getId(),
                     debitedAccountId: field.getDebitedAccountId(),
                     creditedAccountId: field.getCreditedAccountId(),
@@ -14,7 +15,19 @@ export class TransactionData{
                 }
             })
         } catch (error) {
-            
+            throw new CustomError(500, error.sqlMessage)
+        }
+    }
+    findByAccountCredited = async (creditedAccountId: string) => {
+        try {
+            const transaction = await BaseDatabase.transaction.findMany({
+                where: {
+                    creditedAccountId
+                }
+            })
+            return transaction
+        } catch (error) {
+            throw new CustomError(500, error.sqlMessage)
         }
     }
 }

@@ -3,8 +3,8 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "username": "Snowey",
-    "password": "Eric1234"
+    "username": "teste2",
+    "password": "Teste123"
 }
 
 ###
@@ -14,8 +14,8 @@ POST http://localhost:3003/users/login
 Content-Type: application/json
 
 {
-    "username": "Snowey",
-    "password": "Eric1234"
+    "username": "teste2",
+    "password": "Teste123"
 }
 
 ###
@@ -25,10 +25,14 @@ Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIwODVmMGI
 ###
 //transfer
 POST http://localhost:3003/transaction/transfer
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIwYTVmMWQ2YS01OGI2LTRmZWUtOGNiNy0zNGU5YzRhYzhjZDAiLCJpYXQiOjE2Njg4OTQwOTQsImV4cCI6MTY2ODk4MDQ5NH0.QbTZmmPdfY5nPZWgUtSkdvw1cZ_2NksFGA4jEU6Ihz8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIxNGExZDZkZS04YmEzLTRmMmYtYjczYS02MDM2MDM0MjI4YmEiLCJpYXQiOjE2Njg5MDEyODQsImV4cCI6MTY2ODk4NzY4NH0._sA8V4z9WtY1iu5xqoHInkssF0w9q6nbHRFXcOAU9WY
 Content-Type: application/json
 
 {
-    "username": "Martins",
+    "username": "teste2",
     "value": 1
 }
+###
+//viewCashIn
+GET http://localhost:3003/transaction/cashIn
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzcwM2VkNC00NGEyLTQzOTMtYTU5ZC0yZjM1YjA4ODFlNmQiLCJpYXQiOjE2Njg5MDE5NDYsImV4cCI6MTY2ODk4ODM0Nn0.eCm5Ks7k6rxPFh66EEE3zd3LxuMLrXqeVP207B3ij7c
