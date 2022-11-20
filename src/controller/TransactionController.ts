@@ -28,6 +28,15 @@ export class TransactionController {
 
         }
     }
+    public viewCashOut = async (req: Request, res: Response) => {
+        try {
+            const token = req.headers.authorization
+            const transaction = await this.transactionBusiness.viewCashOut(token)
+            res.status(200).send(transaction)
+        } catch (error) {
+            res.status(error.statusCode || 400).send({ error: error.message })
+        }
+    }
 }
 
 export default new TransactionController(transactionBusiness)

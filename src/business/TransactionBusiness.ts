@@ -62,9 +62,26 @@ export class TransactionBusiness {
             const tokenData = this.authenticator.getTokenData(token)
             const { accountId } = tokenData
 
-            const transactionDB = this.transactionData.findByAccountCredited(accountId)
+            const transactionDB = await this.transactionData.findByAccountCredited(accountId)
             if(!transactionDB){
                 throw new CustomError(422, "Invalid token")
+            }
+            return transactionDB
+        } catch (error) {
+            throw new CustomError(error.statusCode, error.message);
+        }
+    }
+    viewCashOut = async (token: string) => {
+        try {
+            const tokenData = this.authenticator.getTokenData(token)
+            const { accountId } = tokenData
+
+            const transactionDB = await this.transactionData.findByAccountDebited(accountId)
+            if (!transactionDB) {
+                throw new CustomError(422, "Invalid token")
+            }
+            if (transactionDB.length === 0) {
+                throw new CustomError(422, "Sorry, you have no transactions yet")
             }
             return transactionDB
         } catch (error) {

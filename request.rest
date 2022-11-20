@@ -3,7 +3,7 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-    "username": "teste2",
+    "username": "Felipe",
     "password": "Teste123"
 }
 
@@ -35,4 +35,9 @@ Content-Type: application/json
 ###
 //viewCashIn
 GET http://localhost:3003/transaction/cashIn
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzcwM2VkNC00NGEyLTQzOTMtYTU5ZC0yZjM1YjA4ODFlNmQiLCJpYXQiOjE2Njg5MDE5NDYsImV4cCI6MTY2ODk4ODM0Nn0.eCm5Ks7k6rxPFh66EEE3zd3LxuMLrXqeVP207B3ij7c
+
+###
+//viewCashOut
+GET http://localhost:3003/transaction/cashOut
 Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI2NzcwM2VkNC00NGEyLTQzOTMtYTU5ZC0yZjM1YjA4ODFlNmQiLCJpYXQiOjE2Njg5MDE5NDYsImV4cCI6MTY2ODk4ODM0Nn0.eCm5Ks7k6rxPFh66EEE3zd3LxuMLrXqeVP207B3ij7c

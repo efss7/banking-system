@@ -30,4 +30,16 @@ export class TransactionData {
             throw new CustomError(500, error.sqlMessage)
         }
     }
+    findByAccountDebited = async (debitedAccountId: string) => {
+        try {
+            const transaction = await BaseDatabase.transaction.findMany({
+                where: {
+                    debitedAccountId
+                }
+            })
+            return transaction
+        } catch (error) {
+            throw new CustomError(500, error.sqlMessage)
+        }
+    }
 }
