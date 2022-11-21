@@ -8,6 +8,6 @@ import { transactionRouter } from "./business/routes/TransactionRouter";
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", userRouter)
+app.use("/user", userRouter)
 app.use("/account", accountRouter)
 app.use("/transaction", transactionRouter)

@@ -1,5 +1,5 @@
 //signup
-POST http://localhost:3003/users/signup
+POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 ###
 
 //login
-POST http://localhost:3003/users/login
+POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
