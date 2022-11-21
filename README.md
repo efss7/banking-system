@@ -7,6 +7,8 @@
 <a href="#desenvolvedor">Desenvolvedor</a>
 </p>
 
+<img width="350xp" src="https://user-images.githubusercontent.com/99001809/203137039-4e27fdfd-7fe7-4fcc-844c-927e78a1a1ec.png" />
+
 <h1 id="sobre">💰 Projeto NG-Cash 💸</h1>
 
 Uma API desenvolvida para o processo seletivo da [NG.CASH](https://ng.cash/). O **back-end** é uma API REST desenvolvida em [Node.JS](https://nodejs.org/en/) com [TypeScript](https://www.typescriptlang.org/) como linguagem principal, [Postgres](https://www.postgresql.org/) como banco de dados, [Prisma](https://www.prisma.io/) como ORM e [Jest](https://jestjs.io/pt-BR/) para os testes unitários da aplicação, atualmente se encontra rodando localmente com o uso do [Docker](https://docs.docker.com/). a API funciona como um sistema bancário comum, onde é possível visualizar seu saldo e realizar transferências, ver todas as transações de saída e entrada, filtrar por data também, tudo isso o mais automatizado possível. Também foi feita o uso de bibliotecas [BcryptJs](https://www.npmjs.com/package/bcryptjs) para o rasheio de senhas, o [JWT](https://jwt.io/introduction) para a criptografia dos tokens, e [Uuid](https://www.npmjs.com/package/uuid) para a geração de IDs.
@@ -46,7 +48,7 @@ Uma API desenvolvida para o processo seletivo da [NG.CASH](https://ng.cash/). O 
 ### Pré-Requisito
 - Possuir [Docker](https://docs.docker.com/) instalado na sua máquina 
 ### Como instalar e rodar
-* Para baixar o projeto
+* Para baixar o projeto, execute os seguintes comandos no seu terminal:
 ```
 git clone https://github.com/efss7/seletivo-ng-cash.git
 ```
@@ -58,7 +60,7 @@ docker compose up
 ```
 * Para rodar os testes unitários (opcional)
 ```
-8. npm run test
+npm run test
 ```
 <h2 id="desenvolvedor">👨‍💻 Desenvolvedor</h2>
 
