@@ -11,7 +11,6 @@ export class TransactionController {
         try {
             const token = req.headers.authorization
             const { username, value } = req.body
-            console.log(req.body)
             const fields: transactionDto = { username, value }
             await this.transactionBusiness.transfer(token, fields)
             res.status(200).send("successful transfer!")

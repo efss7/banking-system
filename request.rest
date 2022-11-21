@@ -25,7 +25,7 @@ Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc
 ###
 //transfer
 POST http://localhost:3003/transaction/transfer
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIyMmMzYzEwYi04ZmZjLTRmNDctODdiYS04NDFmNWNkMjVjM2IiLCJpYXQiOjE2NjkwMDY1NDAsImV4cCI6MTY2OTA5Mjk0MH0.Xf-QS7ARQcPOomKTm17GJoxYQXWcneutWIG04j22cuY
 Content-Type: application/json
 
 {
@@ -35,7 +35,7 @@ Content-Type: application/json
 ###
 //viewCashIn
 GET http://localhost:3003/transaction/cashIn
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc5NC02NWI1LTQxZWQtOTc1NS1jZjVmZGRkYTk2ZTYiLCJpYXQiOjE2Njg5Njg3MTgsImV4cCI6MTY2OTA1NTExOH0.N_3eMIgT_lbv0dTk-MeB09YiSxXLrILu_acLjPeATDA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIyMmMzYzEwYi04ZmZjLTRmNDctODdiYS04NDFmNWNkMjVjM2IiLCJpYXQiOjE2NjkwMDY1NDAsImV4cCI6MTY2OTA5Mjk0MH0.Xf-QS7ARQcPOomKTm17GJoxYQXWcneutWIG04j22cuY
 ###
 //viewCashOut
 GET http://localhost:3003/transaction/cashOut
@@ -43,9 +43,9 @@ Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiI0YTVkODc
 ###
 //viewByDate
 POST  http://localhost:3003/transaction/byDate
-Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIyMmMzYzEwYi04ZmZjLTRmNDctODdiYS04NDFmNWNkMjVjM2IiLCJpYXQiOjE2Njg5Njg5MTEsImV4cCI6MTY2OTA1NTMxMX0.-NjL7qsk7NDUMVFzTRMDlfCVPhTXuVQDVMJ0C5zxxpY
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOiIyMmMzYzEwYi04ZmZjLTRmNDctODdiYS04NDFmNWNkMjVjM2IiLCJpYXQiOjE2NjkwMDY1NDAsImV4cCI6MTY2OTA5Mjk0MH0.Xf-QS7ARQcPOomKTm17GJoxYQXWcneutWIG04j22cuY
 Content-Type: application/json
 
 {
-    "date": "19/11/2022"
+    "date": "20/11/2022"
 }

@@ -13,7 +13,6 @@ export class AccountData {
                 },
             })
         } catch (error: any) {
-            console.log(error)
             throw new CustomError(500, error.sqlMessage)
         }
     }

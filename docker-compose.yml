@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/home/node/app
     env_file:
-      - .env.prod
+      - .env
     depends_on:
       - db
 
