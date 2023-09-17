@@ -11,7 +11,7 @@
     "migrate": "npx prisma migrate dev --name init"
   },
   "engines": {
-    "node": "v18.12.1"
+    "node": "v18.17.1"
   },
   "keywords": [],
   "author": "",
