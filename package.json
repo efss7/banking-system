@@ -8,7 +8,8 @@
     "dev": "ts-node-dev ./src/index.ts",
     "start": "node ./build/index.js",
     "test": "jest",
-    "migrate": "npx prisma migrate dev --name init"
+    "migrate": "npx prisma migrate dev --name init",
+    "vercel-build": "npx prisma migrate deploy"
   },
   "engines": {
     "node": "v18.17.1"
