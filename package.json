@@ -9,7 +9,7 @@
     "start": "node ./build/index.js",
     "test": "jest",
     "migrate": "npx prisma migrate dev --name init",
-    "vercel-build": "npx prisma migrate deploy"
+    "vercel-build": "npx prisma migrate deploy && npx prisma generate"
   },
   "engines": {
     "node": "v18.17.1"
